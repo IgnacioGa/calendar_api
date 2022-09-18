@@ -29,6 +29,17 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "distribute"
+version = "0.7.3"
+description = "distribute legacy wrapper"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+setuptools = ">=0.7"
+
+[[package]]
 name = "dj-database-url"
 version = "1.0.0"
 description = "Use Database URLs in your Django Application."
@@ -193,7 +204,7 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "98437ae7b65e24eb49afad3955674a4f06a9de9602f2a9d89fe513fc32fa2090"
+content-hash = "378df14079f870f5013b13ebdf863b1cce45c6a2aec76f474b723dba522c7a32"
 
 [metadata.files]
 asgiref = [
@@ -281,6 +292,9 @@ Brotli = [
     {file = "Brotli-1.0.9-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:9749a124280a0ada4187a6cfd1ffd35c350fb3af79c706589d98e088c5044267"},
     {file = "Brotli-1.0.9-pp37-pypy37_pp73-win_amd64.whl", hash = "sha256:76ffebb907bec09ff511bb3acc077695e2c32bc2142819491579a695f77ffd4d"},
     {file = "Brotli-1.0.9.zip", hash = "sha256:4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"},
+]
+distribute = [
+    {file = "distribute-0.7.3.zip", hash = "sha256:3dc7a8d059dcf72f0ead2fa2144a24ee0ef07dce816e8c3545d7345767138c5e"},
 ]
 dj-database-url = [
     {file = "dj-database-url-1.0.0.tar.gz", hash = "sha256:ccf3e8718f75ddd147a1e212fca88eecdaa721759ee48e38b485481c77bca3dc"},
