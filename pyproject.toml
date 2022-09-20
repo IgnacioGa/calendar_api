@@ -29,7 +29,5 @@ distribute = "^0.7.3"
 setuptools = "^65.3.0"
 
 [build-system]
-requires = [
-    "setuptools>=42",
-]
+requires = ["poetry-core>=1.1.0a6"]
 build-backend = "poetry.core.masonry.api"
