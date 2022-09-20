@@ -25,6 +25,11 @@ setuptools = "^65.3.0"
 distribute = "^0.7.3"
 
 
+[tool.poetry.group.dev.dependencies]
+setuptools = "^65.3.0"
+
 [build-system]
-requires = ["setuptools"]
+requires = [
+    "setuptools>=42",
+]
 build-backend = "poetry.core.masonry.api"
