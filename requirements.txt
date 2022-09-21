@@ -1,7 +1,6 @@
 asgiref==3.5.2 ; python_version >= "3.8" and python_version < "4.0"
 backports-zoneinfo==0.2.1 ; python_version >= "3.8" and python_version < "3.9"
 brotli==1.0.9 ; python_version >= "3.8" and python_version < "4.0"
-distribute==0.7.3 ; python_version >= "3.8" and python_version < "4.0"
 dj-database-url==1.0.0 ; python_version >= "3.8" and python_version < "4.0"
 django-cors-headers==3.13.0 ; python_version >= "3.8" and python_version < "4.0"
 django==4.1.1 ; python_version >= "3.8" and python_version < "4.0"

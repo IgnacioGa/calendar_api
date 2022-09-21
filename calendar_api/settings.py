@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 import os
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-*wo4zm4_lm3n^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = [] # 'ignacioga.pythonanywhere.com', '127.0.0.1', 'http://127.0.0.1:5173/', 'https://calendar-site.onrender.com/'
+ALLOWED_HOSTS = ['ignacioga.pythonanywhere.com', '127.0.0.1', 'http://127.0.0.1:5173/', 'https://calendar-site.onrender.com/', ' 0.0.0.0:8000'] # 'ignacioga.pythonanywhere.com', '127.0.0.1', 'http://127.0.0.1:5173/', 'https://calendar-site.onrender.com/'
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -123,12 +122,19 @@ WSGI_APPLICATION = 'calendar_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
         default='postgresql://postgres:postgres@localhost:5432/calendar_api',
         conn_max_age=600
     )
+} """
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
