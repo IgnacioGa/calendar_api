@@ -13,6 +13,10 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt /usr/src/app
 RUN pip install -r requirements.txt
 
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /opt/render/entrypoint.sh
+
 # copy project
 COPY . /usr/src/app
 
