@@ -1,0 +1,14 @@
+# pyproject.toml
+
+[tool.poetry]
+name = "calendar_api"
+version = "0.1.0"
+description = ""
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
