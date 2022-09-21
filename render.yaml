@@ -7,7 +7,7 @@ services:
   - type: web
     name: calendar_api
     env: python
-    buildCommand: "./build.sh"
+    buildCommand: "./entrypoint.sh"
     startCommand: "gunicorn calendar_api.wsgi:application"
     envVars:
       - key: DATABASE_URL
