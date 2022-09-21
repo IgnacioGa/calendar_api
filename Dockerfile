@@ -16,11 +16,9 @@ RUN pip install -r requirements.txt
 # copy project
 COPY . /usr/src/app
 
-echo "Collect static files"
-python manage.py collectstatic --noinput
+run python manage.py collectstatic --noinput
 
-echo "Apply database migrations"
-python manage.py migrate
+run python manage.py migrate
 
 EXPOSE 8000
 
