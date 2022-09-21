@@ -1,25 +1,22 @@
 # pull the official base image
-FROM python:3.9.14-alpine3.15
+FROM python:3.9.14
 
-# set work directory
+# File Author / Maintainer
+MAINTAINER IgnacioGa
+
+#add project files to the usr/src/app folder
+ADD . /usr/src/app
+
+#set directoty where CMD will execute 
 WORKDIR /usr/src/app
 
-# set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+COPY requirements.txt ./
 
-# install dependencies
-RUN pip install --upgrade pip 
-COPY ./requirements.txt /usr/src/app
-RUN pip install -r requirements.txt
+# Get pip to download and install requirements:
+RUN pip install --no-cache-dir -r requirements.txt
 
-# copy project
-COPY . /usr/src/app
-
+# Expose ports
 EXPOSE 8000
 
-CMD ["python", "manage.py", "migrate"]
-
-CMD ["python", "manage.py", "collectstatic", "--noinput"]
-
-CMD ["python", "manage.py", "runserver"]
+# default command to execute    
+CMD exec gunicorn calendar_api.wsgi:application --bind 0.0.0.0:8000 --workers 3 
