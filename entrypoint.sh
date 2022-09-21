@@ -13,8 +13,8 @@ python manage.py collectstatic --noinput
 cp -rv static/* static_shared/
 
 gunicorn yourapp.wsgi:application \
-    --env DJANGO_SETTINGS_MODULE=yourapp.production_settings \
-    --name yourapp \
+    --env DJANGO_SETTINGS_MODULE=calendar_api.production_settings \
+    --name calendar_api \
     --bind 0.0.0.0:8000 \
     --timeout 600 \
     --workers 4 \
