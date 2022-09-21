@@ -103,7 +103,7 @@ ROOT_URLCONF = 'calendar_api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'staticfiles')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -113,8 +113,19 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+
     },
 ]
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static'),     os.path.join(BASE_DIR, 'build')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 WSGI_APPLICATION = 'calendar_api.wsgi.application'
 
@@ -171,9 +182,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# This setting tells Django at which URL static files are going to be served to the user.
-# Here, they well be accessible at your-domain.onrender.com/static/...
-STATIC_URL = '/static/'
 
 # Following settings only make sense on production and may break development environments.
 if not DEBUG:
